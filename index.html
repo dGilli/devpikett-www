@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.4/dist/cdn.min.js"></script>
     </head>
     <body>
         <div class="bg-gray-900">
@@ -126,15 +127,6 @@
                     </div>
                 </div>
 
-
-                <div x-data="{ open: false }">
-                    <button @click="open = true">Expand</button>
-
-                    <span x-show="open">
-                        Content...
-                    </span>
-                </div>
-
                 <!-- Feature section -->
                 <div class="mt-32 sm:mt-56">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -146,12 +138,11 @@
                     </div>
                     <div class="relative overflow-hidden pt-16">
                         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                            <div class="relative w-full overflow-hidden">
-                                <img
-                                    src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
-                                    alt="App screenshot"
-                                    class="w-full h-auto mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
-                                >
+                            <div x-init="carousel(5000)($el)" class="relative w-full aspect-[3.141592/1] overflow-hidden [&>*:not(.active)]:absolute [&>*:not(.active)]:ml-20 [&>*:not(.active)]:opacity-0">
+                                <img class="w-full h-auto mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10 transition-all duration-500 ease-in-out motion-reduce:transition-none active" src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png" alt="App screenshot">
+                                <img class="w-full h-auto mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10 transition-all duration-500 ease-in-out motion-reduce:transition-none" src="https://radiant.tailwindui.com/screenshots/app.png" alt="App screenshot">
+                                <img class="w-full h-auto mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10 transition-all duration-500 ease-in-out motion-reduce:transition-none" src="https://radiant.tailwindui.com/screenshots/networking.png" alt="App screenshot">
+                                <img class="w-full h-auto mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10 transition-all duration-500 ease-in-out motion-reduce:transition-none" src="https://radiant.tailwindui.com/screenshots/competitors.png" alt="App screenshot">
                             </div>
                             <div class="relative" aria-hidden="true">
                                 <div class="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]"></div>
@@ -286,9 +277,25 @@
                         </a>
                     </div>
                     <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2024 Dennis Gilli. Alle Rechte vorbehalten.</p>
-
                 </div>
             </footer>
         </div>
+
+        <script>
+        function carousel(interval) {
+            return (el) => {
+                let currentIndex = 0;
+                const slides = el.children;
+                const totalSlides = slides.length;
+                const updateSlide = () => {
+                    Array.from(slides).forEach(slide => slide.classList.remove('active'));
+                    slides[currentIndex].classList.add('active');
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                };
+                updateSlide();
+                setInterval(updateSlide, interval);
+            };
+        }
+        </script>
     </body>
 </html>
