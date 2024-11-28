@@ -226,19 +226,19 @@
                     <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-white sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
                         <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
                             <dt class="text-sm/6">Zufriedene Kunden aus unterschiedlichen Branchen.</dt>
-                            <dd class="order-first text-3xl font-semibold tracking-tight">30+</dd>
+                            <dd x-init="observeAndCountUp($el)" class="order-first text-3xl font-semibold tracking-tight">30+</dd>
                         </div>
                         <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
                             <dt class="text-sm/6">Uptime guarantee – Verlässliche Dienste, wann immer Sie sie brauchen.</dt>
-                            <dd class="order-first text-3xl font-semibold tracking-tight">99.9%</dd>
+                            <dd x-init="observeAndCountUp($el)" class="order-first text-3xl font-semibold tracking-tight">99.9%</dd>
                         </div>
                         <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
                             <dt class="text-sm/6">Erfahrung und Fachkompetenz, der Sie vertrauen können.</dt>
-                            <dd class="order-first text-3xl font-semibold tracking-tight">10 Jahre</dd>
+                            <dd x-init="observeAndCountUp($el, 2)" class="order-first text-3xl font-semibold tracking-tight">10 Jahre</dd>
                         </div>
                         <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
                             <dt class="text-sm/6">erreichbar – Immer da, wenn Sie mich brauchen.</dt>
-                            <dd class="order-first text-3xl font-semibold tracking-tight">7 Tage</dd>
+                            <dd x-init="observeAndCountUp($el, 2)" class="block order-first text-3xl font-semibold tracking-tight">7 Tage</dd>
                         </div>
                     </dl>
                 </div>
@@ -339,9 +339,50 @@
                     slides[currentIndex].classList.add('active');
                     currentIndex = (currentIndex + 1) % totalSlides;
                 };
+
                 updateSlide();
                 setInterval(updateSlide, interval);
             };
+        }
+
+        function countUp(element, startValue = 0) {
+            const originalText = element.textContent.trim();
+            const targetValue = parseFloat(originalText.match(/[\d.]+/)[0]) || 0;
+
+            if (targetValue > startValue) {
+                startValue--;
+                const duration = 1000;
+                const stepTime = duration / (targetValue - startValue);
+                let currentValue = startValue;
+
+                const counterInterval = setInterval(() => {
+                    currentValue += 1;
+                    if (currentValue >= targetValue) {
+                        clearInterval(counterInterval);
+                        currentValue = targetValue;
+                    }
+                    element.textContent = originalText.replace(
+                        /[\d.]+/,
+                        currentValue.toFixed(0)
+                    );
+                }, stepTime);
+            }
+        }
+
+        function observeAndCountUp(element, startValue = 0) {
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            countUp(element, startValue);
+                            observer.unobserve(element);
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: "-80px", }
+            );
+
+            observer.observe(element);
         }
         </script>
     </body>
