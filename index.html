@@ -23,7 +23,11 @@
                         <rect width="100%" height="100%" stroke-width="0" fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)" />
                     </svg>
                     <div class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]" aria-hidden="true">
-                        <div class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+                        <div class="transition-all duration-1000 aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
+                            x-data="randomPolygon()"
+                            x-init="startAnimation()"
+                            :style="`clip-path: polygon(${polygonPoints.join(', ')});`"
+                        ></div>
                     </div>
                     <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
                         <div class="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
@@ -251,7 +255,7 @@
                         <rect width="100%" height="100%" stroke-width="0" fill="url(#1d4240dd-898f-445f-932d-e2872fd12de3)" />
                     </svg>
                     <div class="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
-                        <div class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+                        <div x-data="randomPolygon()" x-init="startAnimation()" :style="`clip-path: polygon(${polygonPoints.join(', ')});`" class="transition-all duration-1000 aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"></div>
                     </div>
                     <div class="mx-auto max-w-2xl text-center">
                         <h2 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Lassen Sie uns zusammenarbeiten</h2>
@@ -282,6 +286,47 @@
         </div>
 
         <script>
+        function randomPolygon() {
+            return {
+                polygonPoints: [],
+                basePoints: [
+                    [73.6, 51.7], [91.7, 11.8], [100, 46.4], [97.4, 82.2], [92.5, 84.9],
+                    [75.7, 64], [55.3, 47.5], [46.5, 49.4], [45, 62.9], [50.3, 87.2],
+                    [21.3, 64.1], [0.1, 100], [5.4, 51.1], [11.4, 63.9], [58.9, 10.2], [73.6, 51.7]
+                ],
+                delta: 7, // Max percentage change per interval
+                maxDelta: 50, // Maximum deviation from base points
+                currentPoints: [], // Tracks current points to avoid exceeding maxDelta
+                interval: 100, // Interval for updates in milliseconds
+
+                generatePolygon() {
+                    this.currentPoints = [...this.basePoints];
+                    this.polygonPoints = this.basePoints.map(([x, y]) => `${x}% ${y}%`);
+                },
+
+                animatePolygon() {
+                    this.currentPoints = this.currentPoints.map(([currentX, currentY], index) => {
+                        const [baseX, baseY] = this.basePoints[index];
+                        let newX = currentX + (Math.random() * 2 - 1) * this.delta;
+                        let newY = currentY + (Math.random() * 2 - 1) * this.delta;
+
+                        newX = Math.min(baseX + this.maxDelta, Math.max(baseX - this.maxDelta, newX));
+                        newY = Math.min(baseY + this.maxDelta, Math.max(baseY - this.maxDelta, newY));
+
+                        return [newX, newY];
+                    });
+                    this.polygonPoints = this.currentPoints.map(([x, y]) => `${x.toFixed(1)}% ${y.toFixed(1)}%`);
+                },
+
+                startAnimation() {
+                    this.generatePolygon(); // Set initial points
+                    setInterval(() => {
+                        this.animatePolygon(); // Update points
+                    }, this.interval);
+                }
+            };
+        }
+
         function carousel(interval) {
             return (el) => {
                 let currentIndex = 0;
