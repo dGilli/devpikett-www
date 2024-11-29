@@ -37,7 +37,14 @@
                                 <a href="/faq" class="inline-flex space-x-6">
                                     <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-inset ring-indigo-500/20">What's new</span>
                                     <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
-                                        <span>SEO Optimierung</span>
+                                        <span x-init="carousel(2000)($el)" class="relative overflow-hidden *:transition-all *:ease-out *:duration-300 *:motion-reduce:transition-none [&>*:not(.active)]:absolute [&>*:not(.active)]:ml-6 [&>*:not(.active)]:opacity-0">
+                                            <p>SEO Optimierung</p>
+                                            <p>Schnelle Bereitstellung</p>
+                                            <p>SSL-Zertifikate</p>
+                                            <p>Skalierbare APIs</p>
+                                            <p>Modernes Design</p>
+                                            <p>Datenbank-Backups</p>
+                                        </span>
                                         <svg class="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                                             <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                                         </svg>
