@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="bg-gray-900">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://www.nerdfonts.com/assets/css/webfont.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.4/dist/cdn.min.js"></script>
+    </head>
+    <body>
+        <div class="bg-gray-900">
+            <header class="absolute inset-x-0 top-0 z-50">
+                <div class="mx-auto max-w-7xl px-4">
+                    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                        <div class="flex lg:flex-1">
+                            <a href="/" class="-m-1.5 p-1.5">
+                                <span class="sr-only">Your Company</span>
+                                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
+                    <h1 class="mb-9 px-4 text-white font-extrabold text-4xl leading-10">Rechtliches</h1>
+                    <div class="flex flex-col justify-between md:flex-row-reverse">
+                        <div class="prose prose-sm prose-invert self-start p-4 bg-slate-300/10 ring-1 ring-slate-400/10 rounded-lg">
+                            <h2>Impressum</h2>
+                            <p>Diese Website wird von <span id="businessName">[Business Name]</span> bereitgestellt. Die Inhalte dienen ausschließlich zur Information und erheben keinen Anspruch auf Vollständigkeit oder Aktualität.</p>
+                            <address>
+                                <strong><span id="businessName2">[Business Name]</span></strong><br>
+                                <span id="businessAddress">[Business Address]</span><br>
+                                Telefon: <span id="businessPhone">[Business Phone]</span><br>
+                                E-Mail: <a href="mailto:[Business Email]" id="businessEmail">[Business Email]</a>
+                            </address>
+                            <h3>Haftungsausschluss</h3>
+                            <p>Keine Gewähr für Richtigkeit, Vollständigkeit oder Aktualität. Haftung für Schäden durch Nutzung der Inhalte ausgeschlossen. <br>
+                                Externe Links ohne Prüfung – keine Verantwortung.<br>
+                                Keine Garantie für Schadsoftwarefreiheit, Haftung abgelehnt.</p>
+                            <h3>Urheberrecht</h3>
+                            <p>Alle Inhalte urheberrechtlich geschützt. Nutzung nur mit schriftlicher Genehmigung.</p>
+                        </div>
+                        <div class="prose prose-sm prose-invert grow w-full p-4">
+                            <h2>Datenschutzerklärung</h2>
+                            <h3>1. Allgemeine Informationen</h3>
+                            <p>Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Die folgende Datenschutzerklärung beschreibt, wie <span id="businessName">[Business Name]</span> (<span id="businessAdress">[Business Address]</span>, „wir“ oder „uns“) Ihre Daten erhebt, nutzt und schützt, wenn Sie unsere Website (<span id="siteDomain">[Domain]</span>) besuchen, unsere Dienste nutzen oder mit uns in Kontakt treten.</p>
+                            <h3>2. Wer wir sind und wie Sie uns kontaktieren können</h3>
+                            <address>
+                                <strong id="businessName2">[Business Name]</strong><br>
+                                <span id="businessAdress2">[Business Address]</span><br>
+                                <a href="mailto:" id="businessEmail">[Business Email]</a>
+                            </address>
+                            <p>Bei Fragen zur Verarbeitung Ihrer Daten oder zur Ausübung Ihrer Rechte können Sie uns jederzeit kontaktieren.</p>
+                            <h3>3. Begriffsdefinitionen</h3>
+                            <p><strong>Personenbezogene Daten</strong><br>
+                                Alle Informationen, die sich auf eine identifizierbare Person beziehen, z. B. Name, E-Mail-Adresse, IP-Adresse oder Telefonnummer.</p>
+                            <p><strong>Besondere Kategorien personenbezogener Daten</strong><br>
+                                Umfasst u. a. Daten zu Gesundheit, religiösen Überzeugungen, sexueller Orientierung oder strafrechtlichen Verfolgungen. Solche Daten verarbeiten wir nur, wenn Sie sie uns ausdrücklich übermitteln.</p>
+                            <p><strong>Verarbeitung</strong><br>
+                                Umgang mit Daten wie Erheben, Speichern, Verwenden, Weitergeben oder Löschen.</p>
+                            <p><strong>Bekanntgabe</strong><br>
+                                Die Übermittlung von Daten an Dritte, beispielsweise Behörden oder Dienstleister.</p>
+                            <h3>4. Ihre Rechte</h3>
+                            <ul>
+                                <li><strong>Auskunft:</strong> Sie haben das Recht, Informationen über die von uns gespeicherten Daten zu erhalten.</li>
+                                <li><strong>Berichtigung und Löschung:</strong> Sie können jederzeit die Korrektur oder Löschung Ihrer Daten verlangen, sofern keine gesetzlichen Pflichten dem entgegenstehen.</li>
+                                <li><strong>Einschränkung der Verarbeitung:</strong> In bestimmten Fällen können Sie die Verarbeitung Ihrer Daten einschränken.</li>
+                                <li><strong>Datenübertragbarkeit:</strong> Auf Wunsch stellen wir Ihre Daten in einem gängigen Format bereit oder übermitteln sie direkt an einen Dritten.</li>
+                                <li><strong>Widerspruch:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen, insbesondere bei Direktwerbung.</li>
+                                <li><strong>Beschwerde:</strong> Beschwerden können Sie beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten einreichen.</li>
+                            </ul>
+                            <h3>5. Sicherheit Ihrer Daten</h3>
+                            <p>Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen. Dies umfasst die Nutzung von SSL-Verschlüsselung und die Verpflichtung unserer Mitarbeitenden sowie Vertragspartner zur Wahrung der Vertraulichkeit.</p>
+                            <h3>6. Erhobene Daten und ihre Verarbeitung</h3>
+                            <p><strong>Kategorien personenbezogener Daten:</strong></p>
+                            <ul>
+                                <li>Basisdaten (z. B. Name, Adresse)</li>
+                                <li>Kontaktdaten (z. B. E-Mail-Adresse)</li>
+                                <li>Technische Daten (z. B. IP-Adresse, Browserinformationen)</li>
+                                <li>Nutzungsdaten (z. B. besuchte Seiten, Interaktionen)</li>
+                            </ul>
+                            <p><strong>Quellen der Daten:</strong></p>
+                            <ul>
+                                <li>Direkt von Ihnen (z. B. durch Kontaktformulare)</li>
+                                <li>Öffentlich zugängliche Quellen</li>
+                                <li>Drittanbieter (z. B. Zahlungsdienstleister)</li>
+                            </ul>
+                            <h3>7. Zweck der Datenverarbeitung</h3>
+                            <ul>
+                                <li>Zur Bereitstellung unserer Website und Dienste</li>
+                                <li>Für Kommunikation und Kundenservice</li>
+                                <li>Zur Vertragserfüllung</li>
+                                <li>Für Sicherheits- und Analysezwecke</li>
+                            </ul>
+                            <h3>8. Weitergabe an Dritte</h3>
+                            <p>Wir geben Daten nur weiter, wenn:</p>
+                            <ul>
+                                <li>Sie eingewilligt haben</li>
+                                <li>Es für die Erfüllung eines Vertrags notwendig ist</li>
+                                <li>Gesetzliche Verpflichtungen dies erfordern</li>
+                            </ul>
+                            <p>Empfänger können IT-Dienstleister, Zahlungsanbieter oder Behörden sein. Datenübermittlungen ins Ausland erfolgen nur bei gewährleistetem Datenschutz.</p>
+                            <h3>9. Cookies und Tracking</h3>
+                            <p>Unsere Website verwendet Cookies, um Ihre Nutzung zu analysieren und das Angebot zu verbessern. Sie können Cookies in Ihrem Browser deaktivieren, was jedoch die Funktionalität der Website einschränken kann.</p>
+                            <p>Weitere Informationen zu Cookies und Tracking-Diensten finden Sie im Abschnitt „Datenverarbeitungen im Detail“.</p>
+                            <h3>10. Speicherdauer</h3>
+                            <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den Zweck der Verarbeitung erforderlich ist. Vertragsdaten bewahren wir aufgrund gesetzlicher Vorgaben bis zu 10 Jahre auf.</p>
+                            <h3>11. Datenverarbeitungen im Detail</h3>
+                            <h4>Bereitstellung der Website und Logfiles</h4>
+                            <p><strong>Erhobene Daten:</strong> IP-Adresse, Browserdetails, Zugriffszeit.<br>
+                                <strong>Zweck:</strong> Sicherstellung des Betriebs und der Sicherheit der Website.<br>
+                                <strong>Löschung:</strong> Automatisch nach Ende der Sitzung.</p>
+                            <h4>Newsletter</h4>
+                            <p><strong>Erhobene Daten:</strong> E-Mail-Adresse, Interaktionsdaten.<br>
+                                <strong>Zweck:</strong> Versand und Analyse des Newsletters.<br>
+                                <strong>Abmeldung:</strong> Über den Link im Newsletter jederzeit möglich.</p>
+                            <h4>Kommentare</h4>
+                            <p><strong>Erhobene Daten:</strong> Name, E-Mail-Adresse, Kommentarinhalt.<br>
+                                <strong>Zweck:</strong> Publikation und Kontaktaufnahme bei Rückfragen.</p>
+                            <h3>12. Änderungen der Datenschutzerklärung</h3>
+                            <p>Diese Datenschutzerklärung kann bei Bedarf angepasst werden. Änderungen werden auf unserer Website veröffentlicht. Es erfolgt keine separate Benachrichtigung.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA section -->
+                <div class="relative isolate mt-32 px-6 py-32 sm:py-40 lg:px-8">
+                    <svg class="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+                        <defs>
+                            <pattern id="1d4240dd-898f-445f-932d-e2872fd12de3" width="200" height="200" x="50%" y="0" patternUnits="userSpaceOnUse">
+                                <path d="M.5 200V.5H200" fill="none" />
+                            </pattern>
+                        </defs>
+                        <svg x="50%" y="0" class="overflow-visible fill-gray-800/20">
+                            <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
+                        </svg>
+                        <rect width="100%" height="100%" stroke-width="0" fill="url(#1d4240dd-898f-445f-932d-e2872fd12de3)" />
+                    </svg>
+                    <div class="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+                        <div x-data="randomPolygon()" x-init="startAnimation()" :style="`clip-path: polygon(${polygonPoints.join(', ')});`" class="transition-all duration-1000 aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"></div>
+                    </div>
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Lassen Sie uns zusammenarbeiten</h2>
+                        <p class="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">Egal ob für kurzfristige Hilfe oder langfristige Projekte, ich bin bereit, loszulegen.</p>
+                        <div class="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="/kontakt" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Jetzt Kontakt aufnehmen</a>
+                            <a href="/faq" class="text-sm/6 font-semibold text-white">Mehr erfahren <span aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="border-t border-white/10 py-12 md:flex md:items-center md:justify-between">
+                    <div class="flex justify-center gap-x-6 md:order-2">
+                        <p class="mt-8 text-center text-sm/6 text-gray-400 [&>a:hover]:text-gray-300 md:mt-0"><a href="/rechtliches">Impressum&nbsp;& Datenschutz</a></p>
+                        <a href="https://github.com/dgilli" class="text-gray-400 hover:text-gray-300">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2024 Dennis Gilli. Alle Rechte vorbehalten.</p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+        function randomPolygon() {
+            return {
+                polygonPoints: [],
+                basePoints: [
+                    [73.6, 51.7], [91.7, 11.8], [100, 46.4], [97.4, 82.2], [92.5, 84.9],
+                    [75.7, 64], [55.3, 47.5], [46.5, 49.4], [45, 62.9], [50.3, 87.2],
+                    [21.3, 64.1], [0.1, 100], [5.4, 51.1], [11.4, 63.9], [58.9, 10.2], [73.6, 51.7]
+                ],
+                delta: 7, // Max percentage change per interval
+                maxDelta: 50, // Maximum deviation from base points
+                currentPoints: [], // Tracks current points to avoid exceeding maxDelta
+                interval: 100, // Interval for updates in milliseconds
+
+                generatePolygon() {
+                    this.currentPoints = [...this.basePoints];
+                    this.polygonPoints = this.basePoints.map(([x, y]) => `${x}% ${y}%`);
+                },
+
+                animatePolygon() {
+                    this.currentPoints = this.currentPoints.map(([currentX, currentY], index) => {
+                        const [baseX, baseY] = this.basePoints[index];
+                        let newX = currentX + (Math.random() * 2 - 1) * this.delta;
+                        let newY = currentY + (Math.random() * 2 - 1) * this.delta;
+
+                        newX = Math.min(baseX + this.maxDelta, Math.max(baseX - this.maxDelta, newX));
+                        newY = Math.min(baseY + this.maxDelta, Math.max(baseY - this.maxDelta, newY));
+
+                        return [newX, newY];
+                    });
+                    this.polygonPoints = this.currentPoints.map(([x, y]) => `${x.toFixed(1)}% ${y.toFixed(1)}%`);
+                },
+
+                startAnimation() {
+                    this.generatePolygon(); // Set initial points
+                    setInterval(() => {
+                        this.animatePolygon(); // Update points
+                    }, this.interval);
+                }
+            };
+        }
+        </script>
+    </body>
+</html>
