@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="bg-gray-900">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://www.nerdfonts.com/assets/css/webfont.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.4/dist/cdn.min.js"></script>
+    </head>
+    <body>
+        <div class="bg-gray-900">
+            <header class="absolute inset-x-0 top-0 z-50">
+                <div class="mx-auto max-w-7xl px-4">
+                    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                        <div class="flex lg:flex-1">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">Your Company</span>
+                                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
+                    <h1 class="mb-9 px-4 text-white font-extrabold text-4xl leading-10">FAQ</h1>
+                </div>
+
+                <!-- CTA section -->
+                <div class="relative isolate mt-32 px-6 py-32 sm:py-40 lg:px-8">
+                    <svg class="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+                        <defs>
+                            <pattern id="1d4240dd-898f-445f-932d-e2872fd12de3" width="200" height="200" x="50%" y="0" patternUnits="userSpaceOnUse">
+                                <path d="M.5 200V.5H200" fill="none" />
+                            </pattern>
+                        </defs>
+                        <svg x="50%" y="0" class="overflow-visible fill-gray-800/20">
+                            <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
+                        </svg>
+                        <rect width="100%" height="100%" stroke-width="0" fill="url(#1d4240dd-898f-445f-932d-e2872fd12de3)" />
+                    </svg>
+                    <div class="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+                        <div x-data="randomPolygon()" x-init="startAnimation()" :style="`clip-path: polygon(${polygonPoints.join(', ')});`" class="transition-all duration-1000 aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"></div>
+                    </div>
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Lassen Sie uns zusammenarbeiten</h2>
+                        <p class="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">Egal ob für kurzfristige Hilfe oder langfristige Projekte, ich bin bereit, loszulegen.</p>
+                        <div class="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="/kontakt" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Jetzt Kontakt aufnehmen</a>
+                            <a href="/faq" class="text-sm/6 font-semibold text-white">Mehr erfahren <span aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="border-t border-white/10 py-12 md:flex md:items-center md:justify-between">
+                    <div class="flex justify-center gap-x-6 md:order-2">
+                        <p class="mt-8 text-center text-sm/6 text-gray-400 [&>a:hover]:text-gray-300 md:mt-0"><a href="/rechtliches">Impressum&nbsp;& Datenschutz</a></p>
+                        <a href="https://github.com/dgilli" class="text-gray-400 hover:text-gray-300">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2024 Dennis Gilli. Alle Rechte vorbehalten.</p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+        function randomPolygon() {
+            return {
+                polygonPoints: [],
+                basePoints: [
+                    [73.6, 51.7], [91.7, 11.8], [100, 46.4], [97.4, 82.2], [92.5, 84.9],
+                    [75.7, 64], [55.3, 47.5], [46.5, 49.4], [45, 62.9], [50.3, 87.2],
+                    [21.3, 64.1], [0.1, 100], [5.4, 51.1], [11.4, 63.9], [58.9, 10.2], [73.6, 51.7]
+                ],
+                delta: 7, // Max percentage change per interval
+                maxDelta: 50, // Maximum deviation from base points
+                currentPoints: [], // Tracks current points to avoid exceeding maxDelta
+                interval: 100, // Interval for updates in milliseconds
+
+                generatePolygon() {
+                    this.currentPoints = [...this.basePoints];
+                    this.polygonPoints = this.basePoints.map(([x, y]) => `${x}% ${y}%`);
+                },
+
+                animatePolygon() {
+                    this.currentPoints = this.currentPoints.map(([currentX, currentY], index) => {
+                        const [baseX, baseY] = this.basePoints[index];
+                        let newX = currentX + (Math.random() * 2 - 1) * this.delta;
+                        let newY = currentY + (Math.random() * 2 - 1) * this.delta;
+
+                        newX = Math.min(baseX + this.maxDelta, Math.max(baseX - this.maxDelta, newX));
+                        newY = Math.min(baseY + this.maxDelta, Math.max(baseY - this.maxDelta, newY));
+
+                        return [newX, newY];
+                    });
+                    this.polygonPoints = this.currentPoints.map(([x, y]) => `${x.toFixed(1)}% ${y.toFixed(1)}%`);
+                },
+
+                startAnimation() {
+                    this.generatePolygon(); // Set initial points
+                    setInterval(() => {
+                        this.animatePolygon(); // Update points
+                    }, this.interval);
+                }
+            };
+        }
+        </script>
+    </body>
+</html>
+
